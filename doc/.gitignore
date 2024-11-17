@@ -1,0 +1,31 @@
+# Vivado generated files
+*.jou
+*.log
+*.str
+*.xpr
+*.hw
+*.bit
+*.dcp
+*.html
+*.xml
+*.debug
+*.rpt
+*.txt
+*.pb
+*.lock
+*.upgrade_log
+*.vdi
+*.xci.info
+*.wdb
+
+# Directories
+.Xil/
+*.cache/
+*.gen/
+*.ip_user_files/
+*.hw/
+*.runs/
+*.sim/
+work/
+managed_ip_project/
+vivado*/
