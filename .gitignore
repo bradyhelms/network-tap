@@ -1,0 +1,11 @@
+# Vivado-specific files
+*.jou
+*.log
+*.str
+*.xpr
+*.hw
+*.ip_user_files/
+*.cache/
+*.runs/
+*.sim/
+*.Xil/
