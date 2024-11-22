@@ -1,6 +1,6 @@
 # network-tap
 
-## [Build Instructions](docs/build_instructions.md)
+## [Build Instructions](doc/build_instructions.md)
 
 ## Network Tap Project - Collaboration Guide
 
