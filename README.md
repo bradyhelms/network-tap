@@ -25,13 +25,13 @@ The Inline Network Tap is an FPGA-based solution designed to intercept network t
 
 This project was developed by the following students as part of their senior design course:
 
-| Name/Email                                       | Github Acct. |
-|--------------------------------------------------|--------------|
-| [Ryan Pham](mailto:rpham006@fiu.edu)             |              |
-| [Christopher Woodhouse](mailto:cwood056@fiu.edu) | Woodhouse3D  |
-| [Azeez Jinadu](mailto:ajina004@fiu.edu)          |              |
-| [Daniel Suarez](mailto:dzaya006@fiu.edu)         |              |
-| [William Brady Helms](mailto:whelm002@fiu.edu)   | bradyhelms   |
+| Name/Email                                       | Github Acct.    |
+|--------------------------------------------------|-----------------|
+| [Ryan Pham](mailto:rpham006@fiu.edu)             | RyansSteakHouse |
+| [Christopher Woodhouse](mailto:cwood056@fiu.edu) | Woodhouse3D     |
+| [Azeez Jinadu](mailto:ajina004@fiu.edu)          |                 |
+| [Daniel Suarez](mailto:dzaya006@fiu.edu)         |                 |
+| [William Brady Helms](mailto:whelm002@fiu.edu)   | bradyhelms      |
 
 ## [Build Instructions](doc/build_instructions.md)
 
