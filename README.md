@@ -27,11 +27,11 @@ This project was developed by the following students as part of their senior des
 
 | Name/Email                                       | Github Acct.    |
 |--------------------------------------------------|-----------------|
-| [Ryan Pham](mailto:rpham006@fiu.edu)             | RyansSteakHouse |
-| [Christopher Woodhouse](mailto:cwood056@fiu.edu) | Woodhouse3D     |
+| [Ryan Pham](mailto:rpham006@fiu.edu)             | [RyansSteakHouse](https://github.com/RyansSteakHouse) |
+| [Christopher Woodhouse](mailto:cwood056@fiu.edu) | [Woodhouse3D](https://github.com/FloridaChristopher)     |
 | [Azeez Jinadu](mailto:ajina004@fiu.edu)          |                 |
 | [Daniel Suarez](mailto:dzaya006@fiu.edu)         |                 |
-| [William Brady Helms](mailto:whelm002@fiu.edu)   | bradyhelms      |
+| [William Brady Helms](mailto:whelm002@fiu.edu)   | [bradyhelms](https://github.com/bradyhelms)      |
 
 ## [Build Instructions](doc/build_instructions.md)
 
