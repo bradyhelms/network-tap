@@ -25,13 +25,13 @@ The Inline Network Tap is an FPGA-based solution designed to intercept network t
 
 This project was developed by the following students as part of their senior design course:
 
-| Name/Email                                       | Github Acct.    |
-|--------------------------------------------------|-----------------|
-| [Ryan Pham](mailto:rpham006@fiu.edu)             | [RyansSteakHouse](https://github.com/RyansSteakHouse) |
-| [Christopher Woodhouse](mailto:cwood056@fiu.edu) | [Woodhouse3D](https://github.com/FloridaChristopher)     |
-| [Azeez Jinadu](mailto:ajina004@fiu.edu)          |                 |
-| [Daniel Suarez](mailto:dzaya006@fiu.edu)         |                 |
-| [William Brady Helms](mailto:whelm002@fiu.edu)   | [bradyhelms](https://github.com/bradyhelms)      |
+| Name/Email                                       | Github Acct.                                               |
+|--------------------------------------------------|------------------------------------------------------------|
+| [Ryan Pham](mailto:rpham006@fiu.edu)             | [RyansSteakHouse](https://github.com/RyansSteakHouse)      |
+| [Christopher Woodhouse](mailto:cwood056@fiu.edu) | [FloridaChristopher](https://github.com/FloridaChristopher)|
+| [Azeez Jinadu](mailto:ajina004@fiu.edu)          | [jinadt](https://github.com/jinadt)                        |
+| [Daniel Suarez](mailto:dzaya006@fiu.edu)         | [azwdaniel](https://github.com/azwdaniel)                  |
+| [William Brady Helms](mailto:whelm002@fiu.edu)   | [bradyhelms](https://github.com/bradyhelms)                |
 
 ## [Build Instructions](doc/build_instructions.md)
 
