@@ -11,11 +11,10 @@ class PacketInterceptor {
 private:
     pcpp::PcapLiveDevice* inDevice;
     pcpp::PcapLiveDevice* outDevice;
-    pcpp::MacAddress newMacAddress;
+    pcpp::MacAddress      newMacAddress;
     
 public:
-    PacketInterceptor(const std::string& inInterface, const std::string& outInterface, 
-                     const std::string& newMac) {
+    PacketInterceptor(const std::string& inInterface, const std::string& outInterface, const std::string& newMac) {
         // Get the input and output network interfaces
         inDevice = pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDeviceByName(inInterface);
         outDevice = pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDeviceByName(outInterface);
@@ -51,21 +50,21 @@ public:
         pcpp::EthLayer* ethLayer = modifiedPacket.getLayerOfType<pcpp::EthLayer>();
         if (ethLayer != nullptr) {
             std::cout << "\n=== Ethernet Header ===" << std::endl;
-            std::cout << "Source MAC:\t" << ethLayer->getSourceMac() << std::endl;
-            std::cout << "Dest MAC:\t" << ethLayer->getDestMac() << std::endl;
+            std::cout << "Source MAC:\t"             << ethLayer->getSourceMac() << std::endl;
+            std::cout << "Dest MAC:\t"               << ethLayer->getDestMac() << std::endl;
             
             // Modify source MAC address
             ethLayer->setSourceMac(interceptor->newMacAddress);
-            std::cout << "New src MAC:\t" << ethLayer->getSourceMac() << std::endl;
+            std::cout << "New src MAC:\t"            << ethLayer->getSourceMac() << std::endl;
         }
         
         // Get IPv4 layer
         pcpp::IPv4Layer* ipLayer = modifiedPacket.getLayerOfType<pcpp::IPv4Layer>();
         if (ipLayer != nullptr) {
-            std::cout << "\n=== IPv4 Header ===" << std::endl;
-            std::cout << "Source IP:\t" << ipLayer->getSrcIPAddress() << std::endl;
-            std::cout << "Dest IP:\t" << ipLayer->getDstIPAddress() << std::endl;
-            std::cout << "TTL:\t" << (int)ipLayer->getIPv4Header()->timeToLive << std::endl;
+            std::cout << "\n=== IPv4 Header ==="     << std::endl;
+            std::cout << "Source IP:\t"              << ipLayer->getSrcIPAddress() << std::endl;
+            std::cout << "Dest IP:\t"                << ipLayer->getDstIPAddress() << std::endl;
+            std::cout << "TTL:\t"                    << (int)ipLayer->getIPv4Header()->timeToLive << std::endl;
         }
         
         // Compute new packet
