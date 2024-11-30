@@ -51,21 +51,21 @@ public:
         pcpp::EthLayer* ethLayer = modifiedPacket.getLayerOfType<pcpp::EthLayer>();
         if (ethLayer != nullptr) {
             std::cout << "\n=== Ethernet Header ===" << std::endl;
-            std::cout << "Source MAC: " << ethLayer->getSourceMac() << std::endl;
-            std::cout << "Dest MAC: " << ethLayer->getDestMac() << std::endl;
+            std::cout << "Source MAC:\t" << ethLayer->getSourceMac() << std::endl;
+            std::cout << "Dest MAC:\t" << ethLayer->getDestMac() << std::endl;
             
             // Modify source MAC address
             ethLayer->setSourceMac(interceptor->newMacAddress);
+            std::cout << "New src MAC:\t" << ethLayer->getSourceMac() << std::endl;
         }
         
         // Get IPv4 layer
         pcpp::IPv4Layer* ipLayer = modifiedPacket.getLayerOfType<pcpp::IPv4Layer>();
         if (ipLayer != nullptr) {
             std::cout << "\n=== IPv4 Header ===" << std::endl;
-            std::cout << "Source IP: " << ipLayer->getSrcIPAddress() << std::endl;
-            std::cout << "Dest IP: " << ipLayer->getDstIPAddress() << std::endl;
-            std::cout << "TTL: " << (int)ipLayer->getIPv4Header()->timeToLive << std::endl;
-            std::cout << "Protocol: " << (int)ipLayer->getIPv4Header()->protocol << std::endl;
+            std::cout << "Source IP:\t" << ipLayer->getSrcIPAddress() << std::endl;
+            std::cout << "Dest IP:\t" << ipLayer->getDstIPAddress() << std::endl;
+            std::cout << "TTL:\t" << (int)ipLayer->getIPv4Header()->timeToLive << std::endl;
         }
         
         // Compute new packet
