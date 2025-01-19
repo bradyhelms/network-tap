@@ -1,3 +1,0 @@
-/home/hvna/School/EEL4920-Senior/project-file/network-tap/util/PCap/build/CMakeFiles/PacketAnalyzer.dir
-/home/hvna/School/EEL4920-Senior/project-file/network-tap/util/PCap/build/CMakeFiles/edit_cache.dir
-/home/hvna/School/EEL4920-Senior/project-file/network-tap/util/PCap/build/CMakeFiles/rebuild_cache.dir
