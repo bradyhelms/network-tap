@@ -1,0 +1,15 @@
+'Based on the network data analysis, here are the key insights:
+
+1. Protocol Counts:
+   - The majority of the traffic is DATA packets (660 packets), which likely represents the primary application data being transmitted.
+   - There are also RTCP (26 packets), TLS (16 packets), and TCP (14 packets) packets, indicating the use of real-time communication protocols, secure transport, and standard TCP/IP networking.
+   - The presence of 1 "_WS.MALFORMED" packet suggests there may have been an issue with the WebSocket protocol during the observed period.
+
+2. Total Packet Length:
+   - The total packet length of 493,972 bytes indicates a significant amount of data being transmitted over the network.
+
+3. Top 5 Source IPs:
+   - The top source IP address is 192.168.50.2, which accounts for 492 packets, suggesting this is a major source of the network traffic.
+   - The next highest source IPs are 66.22.222.12 (156 packets), 66.22.223.21 (35 packets), 172.217.165.202 (15 packets), and 18.64.174.82 (6 packets), indicating multiple external sources contributing to the overall network activity.
+
+Overall, this network data analysis provides insights into the protocol usage, total data volume, and the primary source IPs involved in the observed network traffic. The high volume of DATA packets and the presence of various protocols suggest a complex network environment with a mix of application-level and transport-level communications.'
