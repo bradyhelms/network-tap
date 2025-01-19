@@ -15,7 +15,6 @@ private:
     
 public:
     PacketInterceptor(const std::string& inInterface, const std::string& outInterface, const std::string& newMac) {
-        // Get the input and output network interfaces
         inDevice = pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDeviceByName(inInterface);
         outDevice = pcpp::PcapLiveDeviceList::getInstance().getPcapLiveDeviceByName(outInterface);
         
@@ -42,37 +41,35 @@ public:
     static void onPacketArrives(pcpp::RawPacket* rawPacket, pcpp::PcapLiveDevice* dev, void* cookie) {
         auto* interceptor = static_cast<PacketInterceptor*>(cookie);
         
-        // Parse and create a new modifiable packet
+        // Parse packet in place
         pcpp::Packet parsedPacket(rawPacket);
-        pcpp::Packet modifiedPacket = parsedPacket;
         
         // Get Ethernet layer
-        pcpp::EthLayer* ethLayer = modifiedPacket.getLayerOfType<pcpp::EthLayer>();
+        pcpp::EthLayer* ethLayer = parsedPacket.getLayerOfType<pcpp::EthLayer>();
         if (ethLayer != nullptr) {
             std::cout << "\n=== Ethernet Header ===" << std::endl;
-            std::cout << "Source MAC:\t"             << ethLayer->getSourceMac() << std::endl;
-            std::cout << "Dest MAC:\t"               << ethLayer->getDestMac() << std::endl;
+            std::cout << "Source MAC:\t" << ethLayer->getSourceMac() << std::endl;
+            std::cout << "Dest MAC:\t" << ethLayer->getDestMac() << std::endl;
             
-            // Modify source MAC address
+            // Modify source MAC address directly in the original packet
             ethLayer->setSourceMac(interceptor->newMacAddress);
-            std::cout << "New src MAC:\t"            << ethLayer->getSourceMac() << std::endl;
+            std::cout << "New src MAC:\t" << ethLayer->getSourceMac() << std::endl;
         }
         
         // Get IPv4 layer
-        pcpp::IPv4Layer* ipLayer = modifiedPacket.getLayerOfType<pcpp::IPv4Layer>();
+        pcpp::IPv4Layer* ipLayer = parsedPacket.getLayerOfType<pcpp::IPv4Layer>();
         if (ipLayer != nullptr) {
-            std::cout << "\n=== IPv4 Header ==="     << std::endl;
-            std::cout << "Source IP:\t"              << ipLayer->getSrcIPAddress() << std::endl;
-            std::cout << "Dest IP:\t"                << ipLayer->getDstIPAddress() << std::endl;
-            std::cout << "TTL:\t"                    << (int)ipLayer->getIPv4Header()->timeToLive << std::endl;
+            std::cout << "\n=== IPv4 Header ===" << std::endl;
+            std::cout << "Source IP:\t" << ipLayer->getSrcIPAddress() << std::endl;
+            std::cout << "Dest IP:\t" << ipLayer->getDstIPAddress() << std::endl;
+            std::cout << "TTL:\t" << (int)ipLayer->getIPv4Header()->timeToLive << std::endl;
         }
         
-        // Compute new packet
-        modifiedPacket.computeCalculateFields();
+        // Recompute checksums and packet fields
+        parsedPacket.computeCalculateFields();
         
-        // Convert modified packet back to raw packet and send
-        pcpp::RawPacket* newRawPacket = modifiedPacket.getRawPacket();
-        interceptor->outDevice->sendPacket(*newRawPacket);
+        // Send the modified original packet
+        interceptor->outDevice->sendPacket(*rawPacket);
     }
     
     void start() {

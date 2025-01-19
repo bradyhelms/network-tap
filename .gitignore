@@ -1,3 +1,4 @@
 util/PCap/build/
 util/PCap/testing/
 *.bak
+AI_Tools/claude-env/*
